@@ -1,7 +1,5 @@
 # CN_Assignments
-Simple Computer Network Projects
-
-GROUP DETAILS:<br/>
+**GROUP DETAILS:**<br/><br/>
 Group 11, CSE 5A<br/>
 Akshatha Ramesh    	1KS17CS003<br/>
 Amogh R			        1KS17CS005<br/>
