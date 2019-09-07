@@ -6,4 +6,4 @@ A status code of 301 tells a client that the resource they asked for has permane
 **STATUS CODE 302** </br>
 HTTP 302. The HTTP response status code 302 Found is a common way of performing URL redirection. ... This is an invitation to the user agent (e.g. a web browser) to make a second, otherwise identical, request to the new URL specified in the location field. The end result is a redirection to the new URL.</br></br>
 **STATUS CODE 403**</br>
-The 403 (Forbidden) status code indicates that the server understood the request but refuses to authorize it. A server that wishes to make public why the request has been forbidden can describe that reason in the response payload (if any). Thus, a 403 (or a 404) might now mean about anything.</br></br>
+The 403 (Forbidden) status code indicates that the server understood the request but refuses to authorize it. A server that wishes to make public why the request has been forbidden can describe that reason in the response payload (if any).</br></br>
