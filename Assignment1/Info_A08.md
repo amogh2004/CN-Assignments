@@ -13,6 +13,8 @@ The HTTP 404, 404 Not Found, 404, Page Not Found, or Server Not Found error mess
 The Web Client is a client-side component within the Java 2 Platform Enterprise Edition (J2EE), a distributed multi-tiered application model used for building and developing enterprise applications. Client-side components are typically computer applications running on a user's computer and connect to a server. These components perform client-side operations as they might need access to information available only on the client side, like user input, or because the server lacks the processing power necessary in such operations.</br></br>
 **WEB PAGE**</br>
 A web page is a document commonly written in HTML (Hypertext Markup Language) that is accessible through the Internet or other networks using an Internet Browser. A web page is accessed by entering a URL address and may contain text, graphics, and hyperlinks to other web pages and files. The page you are reading now is an example of a web page.</br></br>
+**WEB SERVER**</br>
+Web server is a program that uses HTTP to serve files that create webpages to users in response to their requests, which is sent by their computers HTTP connection. Any server that delivers an XML document to another device can be a web server. A better definition might be that a web server is an Internet server that responds to HTTP requests to deliver content and services.</br></br>
 **URL** </br>
 A uniform resource locator (URL) is the address of a resource on the Internet. A URL indicates the location of a resource as well as the protocol used to access it.</br>
 A URL contains the following information:</br>
@@ -21,4 +23,5 @@ b)The the location of the server (whether by IP address or domain name)</br>
 c)The port number on the server (optional)</br>
 d)The location of the resource in the directory structure of the server</br>
 e)A fragment identifier (optional)</br></br>
-
+**TCPDUMP OF COMMUNICATION**</br>
+tcpdump is a common packet analyzer that runs under the command line. It allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached. tcpdump prints the contents of network packets. It can read packets from a network interface card or from a previously created saved packet file. tcpdump can write packets to standard output or a file.</br></br>
