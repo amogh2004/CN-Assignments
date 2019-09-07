@@ -8,4 +8,9 @@ HTTP 302. The HTTP response status code 302 Found is a common way of performing 
 **STATUS CODE 403**</br>
 The 403 (Forbidden) status code indicates that the server understood the request but refuses to authorize it. A server that wishes to make public why the request has been forbidden can describe that reason in the response payload (if any).</br></br>
 **STATUS CODE 404**</br> 
-The HTTP 404, 404 Not Found, 404, Page Not Found, or Server Not Found error message is a Hypertext Transfer Protocol standard response code, in computer network communications, to indicate that the browser was able to communicate with a given server, but the server could not find what was requested
+The HTTP 404, 404 Not Found, 404, Page Not Found, or Server Not Found error message is a Hypertext Transfer Protocol standard response code, in computer network communications, to indicate that the browser was able to communicate with a given server, but the server could not find what was requested.</br></br>
+**WEB CLIENT**</br>
+The Web Client is a client-side component within the Java 2 Platform Enterprise Edition (J2EE), a distributed multi-tiered application model used for building and developing enterprise applications. Client-side components are typically computer applications running on a user's computer and connect to a server. These components perform client-side operations as they might need access to information available only on the client side, like user input, or because the server lacks the processing power necessary in such operations.</br></br>
+**WEB PAGE**</br>
+A web page is a document commonly written in HTML (Hypertext Markup Language) that is accessible through the Internet or other networks using an Internet Browser. A web page is accessed by entering a URL address and may contain text, graphics, and hyperlinks to other web pages and files. The page you are reading now is an example of a web page.</br></br>
+
