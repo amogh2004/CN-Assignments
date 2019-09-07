@@ -13,14 +13,12 @@ The HTTP 404, 404 Not Found, 404, Page Not Found, or Server Not Found error mess
 The Web Client is a client-side component within the Java 2 Platform Enterprise Edition (J2EE), a distributed multi-tiered application model used for building and developing enterprise applications. Client-side components are typically computer applications running on a user's computer and connect to a server. These components perform client-side operations as they might need access to information available only on the client side, like user input, or because the server lacks the processing power necessary in such operations.</br></br>
 **WEB PAGE**</br>
 A web page is a document commonly written in HTML (Hypertext Markup Language) that is accessible through the Internet or other networks using an Internet Browser. A web page is accessed by entering a URL address and may contain text, graphics, and hyperlinks to other web pages and files. The page you are reading now is an example of a web page.</br></br>
-**URL** 
+**URL** </br>
 A uniform resource locator (URL) is the address of a resource on the Internet. A URL indicates the location of a resource as well as the protocol used to access it.</br>
-
 A URL contains the following information:</br>
-
-The protocol used to a access the resource</br>
-The the location of the server (whether by IP address or domain name)</br>
-The port number on the server (optional)</br>
-The location of the resource in the directory structure of the server</br>
-A fragment identifier (optional)</br></br>
+a)The protocol used to a access the resource</br>
+b)The the location of the server (whether by IP address or domain name)</br>
+c)The port number on the server (optional)</br>
+d)The location of the resource in the directory structure of the server</br>
+e)A fragment identifier (optional)</br></br>
 
