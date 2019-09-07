@@ -7,8 +7,8 @@ A status code of 301 tells a client that the resource they asked for has permane
 HTTP 302. The HTTP response status code 302 Found is a common way of performing URL redirection. ... This is an invitation to the user agent (e.g. a web browser) to make a second, otherwise identical, request to the new URL specified in the location field. The end result is a redirection to the new URL.</br></br>
 **STATUS CODE 304**</br>
 304 Not Modified is an HTTP status code that is returned to the client when the cached copy of a particular file is up to date with the server. When a client such as a browser stores something in cache, it also keeps the Last-Modified header sent from the server.</br></br>
-**STATUS CODE 400**</br></br>
-The 400 Bad Request error is an HTTP status code that means that the request you sent to the website server, often something simple like a request to load a web page, was somehow incorrect or corrupted and the server couldn't understand it.
+**STATUS CODE 400**</br>
+The 400 Bad Request error is an HTTP status code that means that the request you sent to the website server, often something simple like a request to load a web page, was somehow incorrect or corrupted and the server couldn't understand it.</br></br>
 **STATUS CODE 403**</br>
 The 403 (Forbidden) status code indicates that the server understood the request but refuses to authorize it. A server that wishes to make public why the request has been forbidden can describe that reason in the response payload (if any).</br></br>
 **STATUS CODE 404**</br> 
