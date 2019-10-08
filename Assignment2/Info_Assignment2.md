@@ -29,3 +29,5 @@ Send message to server.</br>
 Wait until response from server is recieved.</br>
 Process reply and go back to step 2, if necessary.</br>
 Close socket descriptor and exit.</br></br>
+</br></br> socket </br></br>
+A datagram socket is a type of network socket which provides a connectionless point for sending or receiving data packets. Each packet sent or received on a datagram socket is individually addressed and routed.</br></br>
