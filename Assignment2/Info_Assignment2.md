@@ -15,19 +15,18 @@ SOCK_STREAM: TCP(reliable, connection oriented)</br>
 SOCK_DGRAM: UDP(unreliable, connectionless)</br>
 protocol: Protocol value for Internet Protocol(IP), which is 0. This is the same number which appears on protocol field in the IP header of a packet.(man protocols for more details)</br></br>
 
-</br></br>UDP Server :</br></br>
-
+#### UDP Server :
 Create UDP socket.</br>
 Bind the socket to server address.</br>
 Wait until datagram packet arrives from client.</br>
 Process the datagram packet and send a reply to client.</br>
 Go back to Step 3.</br></br>
-</br></br>UDP Client :</br></br>
 
+#### UDP Client :
 Create UDP socket.</br>
 Send message to server.</br>
 Wait until response from server is recieved.</br>
 Process reply and go back to step 2, if necessary.</br>
 Close socket descriptor and exit.</br></br>
-</br></br> socket </br></br>
+#### Socket: 
 A datagram socket is a type of network socket which provides a connectionless point for sending or receiving data packets. Each packet sent or received on a datagram socket is individually addressed and routed.</br></br>
