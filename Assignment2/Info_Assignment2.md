@@ -17,15 +17,15 @@ protocol: Protocol value for Internet Protocol(IP), which is 0. This is the same
 
 </br></br>UDP Server :</br></br>
 
-Create UDP socket.
-Bind the socket to server address.
-Wait until datagram packet arrives from client.
-Process the datagram packet and send a reply to client.
+Create UDP socket.</br>
+Bind the socket to server address.</br>
+Wait until datagram packet arrives from client.</br>
+Process the datagram packet and send a reply to client.</br>
 Go back to Step 3.</br></br>
 </br></br>UDP Client :</br></br>
 
-Create UDP socket.
-Send message to server.
-Wait until response from server is recieved.
-Process reply and go back to step 2, if necessary.
+Create UDP socket.</br>
+Send message to server.</br>
+Wait until response from server is recieved.</br>
+Process reply and go back to step 2, if necessary.</br>
 Close socket descriptor and exit.</br></br>
