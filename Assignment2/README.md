@@ -8,4 +8,5 @@ Thus invocation of sender and receiver program would be as follows
   I - every I message from sender side is lost<br/>
   T - timeout value (in seconds) waiting for ack<br/>
 <br/>
-./receiver <S> <receiver port>
+./receiver |S| |receiver port|
+<br/><br/>
