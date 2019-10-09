@@ -28,51 +28,72 @@ Send message to server.</br>
 Wait until response from server is recieved.</br>
 Process reply and go back to step 2, if necessary.</br>
 Close socket descriptor and exit.</br></br>
+
 #### Socket
 A datagram socket is a type of network socket which provides a connectionless point for sending or receiving data packets. Each packet sent or received on a datagram socket is individually addressed and routed.</br></br>
 
-</br></br>UDP server</br></br>:
- the Caché User Datagram Protocol (UDP) binding. Provides two-way message transfer between a server and a large number of clients. UDP is not connection-based; each data packet transmission is an independent event. Provides fast and lightweight data transmission for local packet broadcasts and remote multicasting.</br>
+#### UDP server
+ The Caché User Datagram Protocol (UDP) binding. Provides two-way message transfer between a server and a large number of clients. UDP is not connection-based; each data packet transmission is an independent event. Provides fast and lightweight data transmission for local packet broadcasts and remote multicasting.</br></br>
 
-**Checksum** </br>
+#### Checksum
 A checksum is an error-detection method in a the transmitter computes a numerical value according to the number of set or unset bits in a message and sends it along with each message frame. At the receiver end, the same checksum function (formula) is applied to the message frame to retrieve the numerical value. If the received checksum value matches the sent value, the transmission is considered to be successful and error-free.</br></br>
-**Acknowledgement**</br>
-The ACK signal is sent by the receiving station (destination) back to the sending station (source) after the receipt of a recognizable block of data of specific size. In order to be recognizable, the data block must conform to the protocol in use. When the source receives the ACK signal from the destination, it transmits the next block of data. If the source fails to receive the ACK signal, it either repeats the block of data or else ceases transmission, depending on the protocol.
+
+#### Acknowledgement
+The ACK signal is sent by the receiving station (destination) back to the sending station (source) after the receipt of a recognizable block of data of specific size. In order to be recognizable, the data block must conform to the protocol in use. When the source receives the ACK signal from the destination, it transmits the next block of data. If the source fails to receive the ACK signal, it either repeats the block of data or else ceases transmission, depending on the protocol.</br>
 
 The ACK signal is usually an ASCII character that is reserved for that purpose. In some protocols, there are various ACK signals that indicate the successful reception and recognition of specific commands, such as power-down or standby.</br></br>
-**Waiting time**</br>
+#### Waiting time
 Time Difference between turn around time and burst time.</br>
 Waiting Time = Turn Around Time – Burst Time</br></br>
-</br></br> **SENDER SIDE** </br></br>
-</br></br>Transmission Delay (Tt)</br></br>
+
+### SENDER SIDE </br>
+
+#### Transmission Delay (Tt)</br></br>
  – Time to transmit the packet from host to the outgoing link. If B is the Bandwidth of the link and D is the Data Size to transmit</br>
+Tt = D/B</br></br>
 
-    Tt = D/B</br>
+#### Propagation Delay (Tp)
+It is the time taken by the first bit transferred by the host onto the outgoing link to reach the destination. It depends on the distance d and the wave propagation speed s (depends on the characteristics of the medium).</br>
+Tp = d/s </br></br>
 
-</br></br>Propagation Delay (Tp)</br></br>
- – It is the time taken by the first bit transferred by the host onto the outgoing link to reach the destination. It depends on the distance d and the wave propagation speed s (depends on the characteristics of the medium).</br>
+#### Efficiency
+It is defined as the ratio of total useful time to the total cycle time of a packet. For stop and wait protocol</br>
+Total cycle time</br> 
+= Tt(data) + Tp(data) + Tt(acknowledgement) + Tp(acknowledgement)</br>
+= Tt(data) + Tp(data) + Tp(acknowledgement)</br>
+= Tt + 2*Tp</br></br>
 
-   Tp = d/s</br>  
-</br></br>Efficiency</br></br> 
-– It is defined as the ratio of total useful time to the total cycle time of a packet. For stop and wait protocol</br>
-
-Total cycle time = Tt(data) + Tp(data) + 
-                    Tt(acknowledgement) + Tp(acknowledgement)</br>
-              =  Tt(data) + Tp(data) + Tp(acknowledgement)</br>
-         =   Tt + 2*Tp</br>
-
-</br></br>Effective Bandwidth(EB) or Throughput</br></br>
- – Number of bits sent per second.</br>
-
+#### Effective Bandwidth(EB) or Throughput
+Number of bits sent per second.</br>
 EB = Data Size(L) / Total Cycle time(Tt + 2*Tp)</br>
 Multiplying and dividing by Bandwidth (B),</br>
-       =  (1/(1+2a)) * B   [ Using a = Tp/Tt ]</br>
-       =  Efficiency * Bandwidth</br>
+=  (1/(1+2a)) * B   [ Using a = Tp/Tt ]</br>
+=  Efficiency * Bandwidth</br></br>
 
-</br></br>Capacity of link</br></br>
- – If a channel is Full Duplex, then bits can be transferred in both the directions and without any collisions. Number of bits a channel/Link can hold at maximum is its capacity.</br>
+#### Capacity of link
+If a channel is Full Duplex, then bits can be transferred in both the directions and without any collisions. Number of bits a channel/Link can hold at maximum is its capacity.</br>
+Capacity = Bandwidth(B) * Propagation(Tp)</br>
+For Full Duplex channels, </br>
+Capacity = 2*Bandwidth(B) * Propagation(Tp)</br></br>
 
- Capacity = Bandwidth(B) * Propagation(Tp)</br>
-        
- For Full Duplex channels, </br>
- Capacity = 2*Bandwidth(B) * Propagation(Tp)</br>
+### RECEIVER SIDE </br>
+
+#### Sender Window Size (WS)
+It is N itself. If we say the protocol is GB10, then WS = 10. N should be always greater than 1 in order to implement pipelining.</br>
+Efficiency Of GBN = N/(1+2a) Where a = Tp/Tt</br>
+If B is the bandwidth of the channel, then Effective Bandwidth or Throughput = Efficiency * Bandwidth = (N/(1+2a)) * B.</br></br>
+
+#### Receiver Window Size (WR)
+WR is always 1 in GBN. Now what exactly happens in GBN, we will explain with a help of example. We have sender window size of 4. Assume that we have lots of sequence numbers just for the sake of explanation. Now the sender has sent the packets 0, 1, 2 and 3. After acknowledging the packets 0 and 1, receiver is now expecting packet 2 and sender window slides to further transmit the packets 4 and 5. Now suppose the packet 2 is lost in the network, Receiver will discard all the packets which sender has transmitted after packet 2 as it is expecting sequence number of 2. On the sender side for every packet sent there is a time out timer which will expire for packet number 2. Now from the last transmitted packet 5 sender will go back to the packet number 2 in the current window and transmit all the packets till packet number 5. That’s why it is called Go Back N. Go back means sender has to go back N places from the last transmitted packet in the unacknowledged window and not from the point where the packet is lost.</br></br>
+
+#### Acknowledgement
+GBN uses Cumulative Acknowledgement. At the receiver side, it starts a acknowledgement timer whenever receiver receives any packet which is fixed and when it expires, it is going to send a cumulative Ack for the number of packets received in that interval of timer. If receiver has received N packets, then the Acknowledgement number will be N+1. Important point is Acknowledgement timer will not start after the expiry of first timer but after receiver has received a packet.
+Time out timer at the sender side should be greater than Acknowledgement timer.</br></br>
+
+#### Relationship Between Window Sizes and Sequence Numbers
+We already know that sequence numbers required should always be equal to the size of window in any sliding window protocol.</br>
+Minimum sequence numbers required in GBN is N+1. Bits Required will be ceil(log2(N+1)).</br>
+The extra 1 is required in order to avoid the problem of duplicate packets as described below:</br>
+Consider an example of GB4. Sender window size is 4 therefore we require a minimum of 4 sequence numbers to label each packet in the window. Now suppose receiver has received all the packets(0, 1, 2 and 3 sent by sender) and hence is now waiting for packet number 0 again(We can not use 4 here as we have only 4 sequence numbers available since N = 4). Now suppose the cumulative ack for the above 4 packets is lost in the network. On sender side, there will be timeout for packet 0 and hence all the 4 packets will be transmitted again. Problem now is receiver is waiting for new set of packets which should have started from 0 but now it will receive the duplicate copies of the previously accepted packets. In order to avoid this, we need one extra sequence number. Now the receive could easily reject all the duplicate packets which were starting from 0 because now it will be waiting for packet number 4( We have added an extra sequence number now).</br></br>
+
+
