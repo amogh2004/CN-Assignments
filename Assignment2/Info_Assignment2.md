@@ -41,3 +41,5 @@ The ACK signal is sent by the receiving station (destination) back to the sendin
 
 The ACK signal is usually an ASCII character that is reserved for that purpose. In some protocols, there are various ACK signals that indicate the successful reception and recognition of specific commands, such as power-down or standby.</br></br>
 **Waiting time**</br>
+Time Difference between turn around time and burst time.
+Waiting Time = Turn Around Time – Burst Time</br></br>
