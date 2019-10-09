@@ -43,3 +43,36 @@ The ACK signal is usually an ASCII character that is reserved for that purpose. 
 **Waiting time**</br>
 Time Difference between turn around time and burst time.</br>
 Waiting Time = Turn Around Time – Burst Time</br></br>
+</br></br> **SENDER SIDE** </br></br>
+</br></br>Transmission Delay (Tt)</br></br>
+ – Time to transmit the packet from host to the outgoing link. If B is the Bandwidth of the link and D is the Data Size to transmit</br>
+
+    Tt = D/B</br>
+
+</br></br>Propagation Delay (Tp)</br></br>
+ – It is the time taken by the first bit transferred by the host onto the outgoing link to reach the destination. It depends on the distance d and the wave propagation speed s (depends on the characteristics of the medium).</br>
+
+   Tp = d/s</br>  
+</br></br>Efficiency</br></br> 
+– It is defined as the ratio of total useful time to the total cycle time of a packet. For stop and wait protocol</br>
+
+Total cycle time = Tt(data) + Tp(data) + 
+                    Tt(acknowledgement) + Tp(acknowledgement)</br>
+              =  Tt(data) + Tp(data) + Tp(acknowledgement)</br>
+         =   Tt + 2*Tp</br>
+
+</br></br>Effective Bandwidth(EB) or Throughput</br></br>
+ – Number of bits sent per second.</br>
+
+EB = Data Size(L) / Total Cycle time(Tt + 2*Tp)</br>
+Multiplying and dividing by Bandwidth (B),</br>
+       =  (1/(1+2a)) * B   [ Using a = Tp/Tt ]</br>
+       =  Efficiency * Bandwidth</br>
+
+</br></br>Capacity of link</br></br>
+ – If a channel is Full Duplex, then bits can be transferred in both the directions and without any collisions. Number of bits a channel/Link can hold at maximum is its capacity.</br>
+
+ Capacity = Bandwidth(B) * Propagation(Tp)</br>
+        
+ For Full Duplex channels, </br>
+ Capacity = 2*Bandwidth(B) * Propagation(Tp)</br>
