@@ -37,3 +37,6 @@ The ACK signal is sent by the receiving station (destination) back to the sendin
 
 The ACK signal is usually an ASCII character that is reserved for that purpose. In some protocols, there are various ACK signals that indicate the successful reception and recognition of specific commands, such as power-down or standby.</br></br>
 **Waiting Time**</br>
+</br></br>UDP</br></br>:
+ the Caché User Datagram Protocol (UDP) binding. Provides two-way message transfer between a server and a large number of clients. UDP is not connection-based; each data packet transmission is an independent event. Provides fast and lightweight data transmission for local packet broadcasts and remote multicasting.</br>
+
