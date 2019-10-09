@@ -48,7 +48,7 @@ Waiting Time = Turn Around Time – Burst Time</br></br>
 
 ### SENDER SIDE </br>
 
-#### Transmission Delay (Tt)</br></br>
+#### Transmission Delay (Tt)
  – Time to transmit the packet from host to the outgoing link. If B is the Bandwidth of the link and D is the Data Size to transmit</br>
 Tt = D/B</br></br>
 
