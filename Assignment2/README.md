@@ -10,3 +10,5 @@ Thus invocation of sender and receiver program would be as follows
 <br/>
 ./receiver |S| |receiver port|
 <br/><br/>
+### Run the file:
+Run the makefile to get the output.
