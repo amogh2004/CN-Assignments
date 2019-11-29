@@ -13,3 +13,7 @@ One of the simplest tests that a user may wish to perform is verifying that a re
 ICMP provides two query messages that work together to provide just this service. The ICMP Echo Request query message is a probe sent by a user to a destination system, which responds with an ICMP Echo Reply query message.<br>
 
 RFC 1122 states that “every host must implement an ICMP Echo server.” Since this service is mandatory, any user should be able to send an ICMP Echo Request to any host on the Internet and receive an ICMP Echo Reply message in return. However, this is not always the case, as firewalls may be blocking the packets (for security reasons), or the packets may simply fail to be delivered.<br><br>
+## Rate Limiting<br>
+Rate limiting is used to control the amount of incoming and outgoing traffic to or from a network. For example, let’s say you are using a particular service’s API that is configured to allow 100 requests/minute. If the number of requests you make exceeds that limit, then an error will be triggered. The reasoning behind implementing rate limits is to allow for a better flow of data and to increase security by mitigating attacks such as DDoS.<br>
+
+Rate limiting also comes in useful if a particular user on the network makes a mistake in their request, thus asking the server to retrieve tons of information that may overload the network for everyone. With rate limiting in place however, these types of errors or attacks are much more manageable.<br><br>
