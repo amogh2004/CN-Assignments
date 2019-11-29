@@ -7,7 +7,7 @@ Ping operates by sending Internet Control Message Protocol (ICMP) echo request p
 
 The command-line options of the ping utility and its output vary between the numerous implementations. Options may include the size of the payload, count of tests, limits for the number of network hops (TTL) that probes traverse, interval between the requests and time to wait for a response. Many systems provide a companion utility ping6, for testing on Internet Protocol version 6 (IPv6) networks, which implement ICMPv6.<br><br>
 
-##Echo Request and Echo Reply query messages<br>
+## Echo Request and Echo Reply query messages<br>
 One of the simplest tests that a user may wish to perform is verifying that a remote system is up and running on the network. Such a test may be required when basic connectivity appears to be failing.<br>
 
 ICMP provides two query messages that work together to provide just this service. The ICMP Echo Request query message is a probe sent by a user to a destination system, which responds with an ICMP Echo Reply query message.<br>
