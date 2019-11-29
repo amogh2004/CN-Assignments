@@ -1,5 +1,6 @@
 import java.io.*; 
 import java.net.*; 
+import java.util.ArrayList;
 //
 import java.lang.Object;
 class NewClass implements Runnable
@@ -31,7 +32,7 @@ class NewClass implements Runnable
 
 class pingClass 
 {
-  public static void main(String[] args) throws InterruptedException
+  public static void main(String[] args) throws Exception
   {
     
     System.out.println("FIRST PING TO LOCALHOST");
@@ -60,6 +61,31 @@ class pingClass
       Runnable r = new NewClass("151.101.65.69");
       new Thread(r).start();
       Thread.sleep(1000);
-    }
+    } 
+    
+    ArrayList<String> commandList = new ArrayList<String>(); 
+          
+    commandList.add("ping"); 
+    // can be replaced by IP 
+    commandList.add("www.google.com");
+    // to read the output 
+
+    ProcessBuilder build = new ProcessBuilder(commandList); 
+    Process process = build.start();
+
+    BufferedReader input = new BufferedReader(new InputStreamReader(process.getInputStream())); 
+    BufferedReader Error = new BufferedReader(new InputStreamReader(process.getErrorStream())); 
+    String s = null; 
+          
+    System.out.println("Standard output: "); 
+    while((s = input.readLine()) != null) 
+    { 
+        System.out.println(s); 
+    } 
+    System.out.println("error (if any): "); 
+    while((s = Error.readLine()) != null) 
+    { 
+        System.out.println(s); 
+    } 
   }
 }
