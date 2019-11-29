@@ -1,6 +1,7 @@
 import java.io.*; 
 import java.net.*; 
-//import java.lang.Object;
+//
+import java.lang.Object;
 class NewClass implements Runnable
 { 
   //final RateLimiter rateLimiter = RateLimiter.create(1);
@@ -14,9 +15,9 @@ class NewClass implements Runnable
   { 
     try
     {
-      InetAddress geek = InetAddress.getByName(ipAddress); 
+      InetAddress net = InetAddress.getByName(ipAddress); 
       System.out.println("Sending Ping Request to " + ipAddress);  
-      if (geek.isReachable(5000)) 
+      if (net.isReachable(5000)) 
         System.out.println("Host is reachable"); 
       else
         System.out.println("Sorry ! We can't reach to this host");
