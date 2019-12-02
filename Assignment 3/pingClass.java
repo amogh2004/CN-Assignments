@@ -35,20 +35,20 @@ class pingClass
   public static void main(String[] args) throws Exception
   {
     
-    System.out.println("FIRST PING TO LOCALHOST");
+    System.out.println("FIRST PING TO GOOGLE.COM");
     for(int i=0;i<60;i++)
     {
-      Runnable r = new NewClass("127.0.0.1");
+      Runnable r = new NewClass("172.217.160.132");
       new Thread(r).start();
       Thread.sleep(1000);
     }
     
     Thread.sleep(30000);
     
-    System.out.println("SECOND PING TO LOCALHOST");
+    System.out.println("SECOND PING TO GOOGLE.COM");
     for(int i=0;i<60;i++)
     {
-      Runnable r = new NewClass("127.0.0.1");
+      Runnable r = new NewClass("172.217.160.132");
       new Thread(r).start();
       Thread.sleep(1000);
     }
