@@ -6,5 +6,4 @@ B02. Create web pages and corresponding web requests that result in following st
 <br/><br/>
 B05. Identify a web page that provides E-tag header. Access this web page with request header "If-None-Match:" and provide the etag value and verify the status code as 304. Access the same web page but modified value of Etag in the header "If-None-Match:" and verify the status code 200.
 <br/>
-The files can also be accessed from:
-https://drive.google.com/drive/folders/12ZjcaUHy4hrvJJk_5sQ4KzVzY_GGAFkT?usp=sharing
+
